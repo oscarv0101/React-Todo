@@ -30,8 +30,19 @@ class App extends React.Component {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
  toggleItem = itemId => {
-   console.log("ItemId: ", itemId)
- }
+   console.log("ItemId:", itemId);
+   this.setState ({
+     todos: this.state.todos.map(todo => {
+      if (itemId === todo.id){
+        return {
+          ...todo,
+          completed: !todo.completed
+        };
+      }
+      return todo;
+     })
+   });
+ };
  addTodo = event => {
    event.preventDefault();
  }

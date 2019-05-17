@@ -1,0 +1,11 @@
+.todo {
+    color:black;
+    
+    
+}
+
+.todo.completed {
+   color: white;
+   text-decoration: line-through;
+    
+}
