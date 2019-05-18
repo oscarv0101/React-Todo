@@ -51,7 +51,8 @@ class App extends React.Component {
     completed: false
   };
   this.setState({
-    todos: [...this.state.todos, newItem]
+    todos: [...this.state.todos, newItem],
+    todo: ""
   })
  }
 
