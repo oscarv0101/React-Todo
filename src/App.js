@@ -8,7 +8,7 @@ class App extends React.Component {
     this.state = {
       todos: [
         {
-          task: <h1>Todo List: MVP</h1>,
+          task: "Breathe",
           id: 1,
           completed: false
         },
@@ -43,9 +43,24 @@ class App extends React.Component {
      })
    });
  };
- addTodo = event => {
-   event.preventDefault();
+ 
+ addItem = item => {
+  const newItem = {
+    name: item,
+    id: Date.now(),
+    completed: false
+  };
+  this.setState({
+    todos: [...this.state.todos, newItem]
+  })
  }
+
+ clearPurchased = event => {
+  event.preventDefault();
+  this.setState({
+      todos: this.state.todos.filter(todo => !todo.completed)
+  });
+}
 
   render() {
     return (
@@ -54,9 +69,13 @@ class App extends React.Component {
         <TodoList
         todos = {this.state.todos}
         todo={this.state.todo}
-        toggleItem={this.toggleItem}/>
+        toggleItem={this.toggleItem}
+        clearPurchased = {this.clearPurchased}
+        />
         <TodoForm
-        addTodo = {this.addTodo}/>
+        addItem = {this.addItem}
+        />
+        
       </div>
     );
   }
