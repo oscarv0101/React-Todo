@@ -66,15 +66,16 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm
+        addItem = {this.addItem}
+        />
         <TodoList
         todos = {this.state.todos}
         todo={this.state.todo}
         toggleItem={this.toggleItem}
         clearPurchased = {this.clearPurchased}
         />
-        <TodoForm
-        addItem = {this.addItem}
-        />
+        
         
       </div>
     );

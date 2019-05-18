@@ -12,7 +12,7 @@ class TodoForm extends React.Component {
 
 
     handleChange = event => {
-        this.setState({ [event.target.name]: event.target.key})
+        this.setState({ [event.target.name]: event.target.value})
     }
 
     submitItem = event => {
